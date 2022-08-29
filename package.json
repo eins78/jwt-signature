@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "scripts": {
+    "demo": "yarn run -s genkeys && yarn run -s sign",
+    "genkeys": "sh scripts/genkey.sh > dev-private-key.pem && cat dev-private-key.pem | sh scripts/pubkey.sh > dev-public-key.pem",
+    "sign": "node sign-and-verify.js"
+  },
+  "dependencies": {
+    "@root/keypairs": "^0.10.3",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
